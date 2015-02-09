@@ -51,7 +51,7 @@ io.sockets.on('connection', function(socket) {
         }
         if (data == 'turn off') {
             console.log('-');
-            board.digitalWrite(ledPin, 0;
+            board.digitalWrite(ledPin, 0);
             socket.broadcast.send("who turned out the light?");
         }
         return;

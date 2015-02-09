@@ -2,7 +2,7 @@ var app = require('http').createServer(handler),
     io = require('/usr/local/lib/node_modules/socket.io').listen(app), 
     fs = require('fs'),
     firmata = require('/usr/local/lib/node_modules/firmata'),
-    board = new firmata.Board('/dev/ttyUSB0', arduinoReady);
+    board = new firmata.Board('/dev/ttyACM0', arduinoReady);
  
 var ledPin = 13;
  

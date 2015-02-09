@@ -4,8 +4,8 @@ var app = require('http').createServer(handler),
     firmata = require('/usr/local/lib/node_modules/firmata'),
     board = new firmata.Board('/dev/ttyACM0', arduinoReady);
  
-var ledPin = 13;
- 
+var ledPin = 8;
+
 function arduinoReady(err) {
     if (err) {
         console.log(err);
@@ -16,6 +16,7 @@ function arduinoReady(err) {
       + '.' + board.firmware.version.minor);
  
     var ledOn = true;
+    //board.pinMode(ledPin, board.MODES.OUTPUT);
     board.pinMode(ledPin, board.MODES.OUTPUT);
 }
  

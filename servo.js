@@ -46,12 +46,12 @@ io.sockets.on('connection', function(socket) {
     socket.on('message', function(data) {
         if (data == 'turn on') {
             console.log('+');
-            board.digitalWrite(ledPin, board.HIGH);
+            board.digitalWrite(ledPin, 90);
             socket.broadcast.send("let there be light!");
         }
         if (data == 'turn off') {
             console.log('-');
-            board.digitalWrite(ledPin, board.LOW);
+            board.digitalWrite(ledPin, 0;
             socket.broadcast.send("who turned out the light?");
         }
         return;

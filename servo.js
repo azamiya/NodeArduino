@@ -1,5 +1,5 @@
 var app = require('http').createServer(handler), 
-    io = require('/usr/local/lib/node_modules/socket.io').listen(app), 
+    io = require('./node_modules/socket.io').listen(app), 
     fs = require('fs'),
     firmata = require('/usr/local/lib/node_modules/firmata'),
     board = new firmata.Board('/dev/ttyACM0', arduinoReady);

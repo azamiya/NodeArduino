@@ -1,0 +1,245 @@
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.12.22+ (dc4@dc4-arm-01) (gcc version 4.7.2 20120731 (prerelease) (crosstool-NG linaro-1.13.1+bzr2458 - Linaro GCC 2012.08) ) #691 PREEMPT Wed Jun 18 18:29:58 BST 2014
+[    0.000000] CPU: ARMv6-compatible processor [410fb767] revision 7 (ARMv7), cr=00c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+[    0.000000] Machine: BCM2708
+[    0.000000] cma: CMA: reserved 8 MiB at 1b800000
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] On node 0 totalpages: 114688
+[    0.000000] free_area_init_node: node 0, pgdat c05fcdf0, node_mem_map c06ae000
+[    0.000000]   Normal zone: 896 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 114688 pages, LIFO batch:31
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 113792
+[    0.000000] Kernel command line: dma.dmachans=0x7f35 bcm2708_fb.fbwidth=1312 bcm2708_fb.fbheight=736 bcm2708.boardrev=0x10 bcm2708.serial=0x62bb6d74 smsc95xx.macaddr=B8:27:EB:BB:6D:74 bcm2708.disk_led_gpio=47 bcm2708.disk_led_active_low=0 sdhci-bcm2708.emmc_clock_freq=250000000 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p6 rootfstype=ext4 elevator=deadline rootwait
+[    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Memory: 439664K/458752K available (4376K kernel code, 238K rwdata, 1340K rodata, 143K init, 701K bss, 19088K reserved)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xdc800000 - 0xff000000   ( 552 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xdc000000   ( 448 MB)
+[    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc059d54c   (5718 kB)
+[    0.000000]       .init : 0xc059e000 - 0xc05c1ee4   ( 144 kB)
+[    0.000000]       .data : 0xc05c2000 - 0xc05fd900   ( 239 kB)
+[    0.000000]        .bss : 0xc05fd90c - 0xc06ad0f8   ( 702 kB)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:394
+[    0.000000] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 4294967ms
+[    0.000000] Switching to timer-based delay loop
+[    0.000000] Console: colour dummy device 80x30
+[    0.000000] console [tty1] enabled
+[    0.001285] Calibrating delay loop (skipped), value calculated using timer frequency.. 2.00 BogoMIPS (lpj=10000)
+[    0.001348] pid_max: default: 32768 minimum: 301
+[    0.001843] Mount-cache hash table entries: 512
+[    0.002678] Initializing cgroup subsys memory
+[    0.002788] Initializing cgroup subsys devices
+[    0.002825] Initializing cgroup subsys freezer
+[    0.002858] Initializing cgroup subsys blkio
+[    0.003005] CPU: Testing write buffer coherency: ok
+[    0.003467] Setting up static identity map for 0xc0427670 - 0xc04276cc
+[    0.005384] devtmpfs: initialized
+[    0.022095] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+[    0.023689] NET: Registered protocol family 16
+[    0.029101] DMA: preallocated 4096 KiB pool for atomic coherent allocations
+[    0.029783] cpuidle: using governor ladder
+[    0.029830] cpuidle: using governor menu
+[    0.030440] bcm2708.uart_clock = 0
+[    0.032261] hw-breakpoint: found 6 breakpoint and 1 watchpoint registers.
+[    0.032315] hw-breakpoint: maximum watchpoint size is 4 bytes.
+[    0.032353] mailbox: Broadcom VideoCore Mailbox driver
+[    0.032453] bcm2708_vcio: mailbox at f200b880
+[    0.032560] bcm_power: Broadcom power driver
+[    0.032597] bcm_power_open() -> 0
+[    0.032623] bcm_power_request(0, 8)
+[    0.533346] bcm_mailbox_read -> 00000080, 0
+[    0.533385] bcm_power_request -> 0
+[    0.533615] Serial: AMBA PL011 UART driver
+[    0.533787] dev:f1: ttyAMA0 at MMIO 0x20201000 (irq = 83, base_baud = 0) is a PL011 rev3
+[    0.896970] console [ttyAMA0] enabled
+[    0.923877] bio: create slab <bio-0> at 0
+[    0.929387] SCSI subsystem initialized
+[    0.933381] usbcore: registered new interface driver usbfs
+[    0.939085] usbcore: registered new interface driver hub
+[    0.944648] usbcore: registered new device driver usb
+[    0.951283] Switched to clocksource stc
+[    0.955542] FS-Cache: Loaded
+[    0.958693] CacheFiles: Loaded
+[    0.974394] NET: Registered protocol family 2
+[    0.979887] TCP established hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.987293] TCP bind hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.993864] TCP: Hash tables configured (established 4096 bind 4096)
+[    1.000313] TCP: reno registered
+[    1.003612] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    1.009484] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    1.016242] NET: Registered protocol family 1
+[    1.021173] RPC: Registered named UNIX socket transport module.
+[    1.027232] RPC: Registered udp transport module.
+[    1.031992] RPC: Registered tcp transport module.
+[    1.036711] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    1.044095] bcm2708_dma: DMA manager at f2007000
+[    1.048832] bcm2708_gpio: bcm2708_gpio_probe c05cfed0
+[    1.054398] vc-mem: phys_addr:0x00000000 mem_base=0x1ec00000 mem_size:0x20000000(512 MiB)
+[    1.064010] audit: initializing netlink socket (disabled)
+[    1.069513] type=2000 audit(0.910:1): initialized
+[    1.236106] VFS: Disk quotas dquot_6.5.2
+[    1.240381] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    1.249391] FS-Cache: Netfs 'nfs' registered for caching
+[    1.256354] NFS: Registering the id_resolver key type
+[    1.261625] Key type id_resolver registered
+[    1.265831] Key type id_legacy registered
+[    1.270594] msgmni has been set to 874
+[    1.276400] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+[    1.284259] io scheduler noop registered
+[    1.288213] io scheduler deadline registered (default)
+[    1.293812] io scheduler cfq registered
+[    1.298980] BCM2708FB: allocated DMA memory 5bc00000
+[    1.304164] BCM2708FB: allocated DMA channel 0 @ f2007000
+[    1.327482] Console: switching to colour frame buffer device 164x46
+[    1.341692] uart-pl011 dev:f1: no DMA platform data
+[    1.347327] vc-cma: Videocore CMA driver
+[    1.351426] vc-cma: vc_cma_base      = 0x00000000
+[    1.356222] vc-cma: vc_cma_size      = 0x00000000 (0 MiB)
+[    1.361806] vc-cma: vc_cma_initial   = 0x00000000 (0 MiB)
+[    1.376827] brd: module loaded
+[    1.385436] loop: module loaded
+[    1.388952] vchiq: vchiq_init_state: slot_zero = 0xdb800000, is_master = 0
+[    1.397052] Loading iSCSI transport class v2.0-870.
+[    1.403261] usbcore: registered new interface driver smsc95xx
+[    1.409384] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+[    1.618538] Core Release: 2.80a
+[    1.624584] Setting default values for core params
+[    1.632223] Finished setting default values for core params
+[    1.840635] Using Buffer DMA mode
+[    1.846779] Periodic Transfer Interrupt Enhancement - disabled
+[    1.855422] Multiprocessor Interrupt Enhancement - disabled
+[    1.863823] OTG VER PARAM: 0, OTG VER FLAG: 0
+[    1.871010] Dedicated Tx FIFOs mode
+[    1.877689] WARN::dwc_otg_hcd_init:1042: FIQ DMA bounce buffers: virt = 0xdbc14000 dma = 0x5bc14000 len=9024
+[    1.890557] FIQ FSM acceleration enabled for :
+[    1.890557] Non-periodic Split Transactions
+[    1.890557] Periodic Split Transactions
+[    1.890557] High-Speed Isochronous Endpoints
+[    1.918655] dwc_otg: Microframe scheduler enabled
+[    1.918758] WARN::hcd_init:473: FIQ at 0xc03080cc
+[    1.926336] WARN::hcd_init:474: FIQ ASM at 0xc0308348 length 36
+[    1.935130] WARN::hcd_init:500: MPHI regs_base at 0xdc806000
+[    1.943611] dwc_otg bcm2708_usb: DWC OTG Controller
+[    1.951358] dwc_otg bcm2708_usb: new USB bus registered, assigned bus number 1
+[    1.961470] dwc_otg bcm2708_usb: irq 32, io mem 0x00000000
+[    1.969773] Init: Port Power? op_state=1
+[    1.976513] Init: Power Port (0)
+[    1.982845] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.992525] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.002573] usb usb1: Product: DWC OTG Controller
+[    2.010035] usb usb1: Manufacturer: Linux 3.12.22+ dwc_otg_hcd
+[    2.018690] usb usb1: SerialNumber: bcm2708_usb
+[    2.026908] hub 1-0:1.0: USB hub found
+[    2.033666] hub 1-0:1.0: 1 port detected
+[    2.040866] dwc_otg: FIQ enabled
+[    2.040885] dwc_otg: NAK holdoff enabled
+[    2.040896] dwc_otg: FIQ split-transaction FSM enabled
+[    2.040918] Module dwc_common_port init
+[    2.041507] usbcore: registered new interface driver usb-storage
+[    2.050746] mousedev: PS/2 mouse device common for all mice
+[    2.059908] bcm2835-cpufreq: min=700000 max=700000 cur=700000
+[    2.068731] bcm2835-cpufreq: switching to governor powersave
+[    2.077251] bcm2835-cpufreq: switching to governor powersave
+[    2.085885] sdhci: Secure Digital Host Controller Interface driver
+[    2.094949] sdhci: Copyright(c) Pierre Ossman
+[    2.102242] sdhci: Enable low-latency mode
+[    2.151361] mmc0: SDHCI controller on BCM2708_Arasan [platform] using platform's DMA
+[    2.162358] mmc0: BCM2708 SDHC host at 0x20300000 DMA 2 IRQ 77
+[    2.171175] sdhci-pltfm: SDHCI platform and OF driver helper
+[    2.179914] ledtrig-cpu: registered to indicate activity on CPUs
+[    2.191100] hidraw: raw HID events driver (C) Jiri Kosina
+[    2.207042] usbcore: registered new interface driver usbhid
+[    2.215688] usbhid: USB HID core driver
+[    2.227160] TCP: cubic registered
+[    2.235702] Indeed it is in host mode hprt0 = 00021501
+[    2.245883] Initializing XFRM netlink socket
+[    2.253162] NET: Registered protocol family 17
+[    2.274600] Key type dns_resolver registered
+[    2.292572] registered taskstats version 1
+[    2.310023] Waiting for root device /dev/mmcblk0p6...
+[    2.319429] mmc0: new high speed SDHC card at address 59b4
+[    2.342073] mmcblk0: mmc0:59b4 00000 7.35 GiB 
+[    2.364311]  mmcblk0: p1 p2 < p5 p6 > p3
+[    2.491420] usb 1-1: new high-speed USB device number 2 using dwc_otg
+[    2.500961] Indeed it is in host mode hprt0 = 00001101
+[    2.711756] usb 1-1: New USB device found, idVendor=0424, idProduct=9514
+[    2.721479] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.732320] hub 1-1:1.0: USB hub found
+[    2.739049] hub 1-1:1.0: 5 ports detected
+[    3.001517] EXT4-fs (mmcblk0p6): recovery complete
+[    3.013036] EXT4-fs (mmcblk0p6): mounted filesystem with ordered data mode. Opts: (null)
+[    3.024316] usb 1-1.1: new high-speed USB device number 3 using dwc_otg
+[    3.033965] VFS: Mounted root (ext4 filesystem) on device 179:6.
+[    3.065185] devtmpfs: mounted
+[    3.071730] Freeing unused kernel memory: 140K (c059e000 - c05c1000)
+[    3.141934] usb 1-1.1: New USB device found, idVendor=0424, idProduct=ec00
+[    3.153235] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    3.166843] smsc95xx v1.0.4
+[    3.235382] smsc95xx 1-1.1:1.0 eth0: register 'smsc95xx' at usb-bcm2708_usb-1.1, smsc95xx USB 2.0 Ethernet, b8:27:eb:bb:6d:74
+[    3.341607] usb 1-1.2: new high-speed USB device number 4 using dwc_otg
+[    3.469482] usb 1-1.2: New USB device found, idVendor=148f, idProduct=5370
+[    3.480602] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    3.491361] usb 1-1.2: Product: 802.11 n WLAN
+[    3.499392] usb 1-1.2: Manufacturer: Ralink
+[    3.506899] usb 1-1.2: SerialNumber: 1.0
+[    3.611558] usb 1-1.4: new full-speed USB device number 5 using dwc_otg
+[    3.736088] usb 1-1.4: New USB device found, idVendor=2341, idProduct=0043
+[    3.746826] usb 1-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=220
+[    3.757664] usb 1-1.4: Manufacturer: Arduino (www.arduino.cc)
+[    3.766627] usb 1-1.4: SerialNumber: 9523834323435180D061
+[    3.871556] usb 1-1.5: new full-speed USB device number 6 using dwc_otg
+[    3.988693] usb 1-1.5: New USB device found, idVendor=046d, idProduct=c52b
+[    4.007320] usb 1-1.5: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[    4.031451] usb 1-1.5: Product: USB Receiver
+[    4.039022] usb 1-1.5: Manufacturer: Logitech
+[    4.073407] input: Logitech USB Receiver as /devices/platform/bcm2708_usb/usb1/1-1/1-1.5/1-1.5:1.0/input/input0
+[    4.103949] hid-generic 0003:046D:C52B.0001: input,hidraw0: USB HID v1.11 Keyboard [Logitech USB Receiver] on usb-bcm2708_usb-1.5/input0
+[    4.168736] input: Logitech USB Receiver as /devices/platform/bcm2708_usb/usb1/1-1/1-1.5/1-1.5:1.1/input/input1
+[    4.196451] hid-generic 0003:046D:C52B.0002: input,hiddev0,hidraw1: USB HID v1.11 Mouse [Logitech USB Receiver] on usb-bcm2708_usb-1.5/input1
+[    4.237515] hid-generic 0003:046D:C52B.0003: hiddev0,hidraw2: USB HID v1.11 Device [Logitech USB Receiver] on usb-bcm2708_usb-1.5/input2
+[    4.932206] udevd[156]: starting version 175
+[    6.569380] cdc_acm 1-1.4:1.0: ttyACM0: USB ACM device
+[    6.766596] usbcore: registered new interface driver cdc_acm
+[    6.853446] cfg80211: Calling CRDA to update world regulatory domain
+[    6.919256] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    7.547358] bcm2708-i2s bcm2708-i2s.0: Failed to create debugfs directory
+[    7.741726] usb 1-1.2: reset high-speed USB device number 4 using dwc_otg
+[    8.062612] ieee80211 phy0: rt2x00_set_rt: Info - RT chipset 5390, rev 0502 detected
+[    8.741650] ieee80211 phy0: rt2x00_set_rf: Info - RF chipset 5370 detected
+[    8.954890] ieee80211 phy0: Selected rate control algorithm 'minstrel_ht'
+[    8.956966] usbcore: registered new interface driver rt2800usb
+[   12.542635] EXT4-fs (mmcblk0p6): re-mounted. Opts: (null)
+[   13.219227] EXT4-fs (mmcblk0p6): re-mounted. Opts: (null)
+[   19.763994] FAT-fs (mmcblk0p5): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[   22.264346] smsc95xx 1-1.1:1.0 eth0: hardware isn't capable of remote wakeup
+[   23.196621] ieee80211 phy0: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
+[   23.203011] ieee80211 phy0: rt2x00lib_request_firmware: Info - Firmware detected - version: 0.29
+[   27.649963] wlan0: authenticate with c4:6e:1f:d7:a8:34
+[   27.711216] wlan0: send auth to c4:6e:1f:d7:a8:34 (try 1/3)
+[   27.717624] wlan0: authenticated
+[   27.718918] rt2800usb 1-1.2:1.0 wlan0: disabling HT/VHT due to WEP/TKIP use
+[   27.721533] wlan0: associate with c4:6e:1f:d7:a8:34 (try 1/3)
+[   27.730493] wlan0: RX AssocResp from c4:6e:1f:d7:a8:34 (capab=0x431 status=0 aid=2)
+[   27.744692] wlan0: associated
+[   30.833826] Adding 102396k swap on /var/swap.  Priority:-1 extents:1 across:102396k SSFS
+[  123.502358] ieee80211 phy0: rt2800usb_entry_txstatus_timeout: Warning - TX status timeout for entry 12 in queue 0
+[  123.502442] ieee80211 phy0: rt2800usb_entry_txstatus_timeout: Warning - TX status timeout for entry 12 in queue 0
+[  123.502466] ieee80211 phy0: rt2800usb_entry_txstatus_timeout: Warning - TX status timeout for entry 12 in queue 0
+[  123.664532] ieee80211 phy0: rt2800usb_txdone: Warning - Got TX status for an empty queue 0, dropping
+[  408.503461] ieee80211 phy0: rt2800usb_entry_txstatus_timeout: Warning - TX status timeout for entry 3 in queue 0
+[  408.503560] ieee80211 phy0: rt2800usb_entry_txstatus_timeout: Warning - TX status timeout for entry 3 in queue 0
+[  408.503587] ieee80211 phy0: rt2800usb_entry_txstatus_timeout: Warning - TX status timeout for entry 3 in queue 0
+[  408.605349] ieee80211 phy0: rt2800usb_txdone: Warning - Got TX status for an empty queue 0, dropping

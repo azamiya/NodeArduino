@@ -73,11 +73,11 @@ io.sockets.on('connection', function(socket) {
             socket.broadcast.send("who turned out the light?");
         }
         if(data == 'left'){
-            dig = dig - 1;
+            dig = dig - 5;
             servo.to(dig);
         }
         if(data == 'right'){
-            dig = dig + 1;
+            dig = dig + 5;
             servo.to(dig);
         }
         return;

@@ -16,7 +16,6 @@ function arduinoReady(err) {
       + '.' + board.firmware.version.minor);
  
     var ledOn = true;
-    //board.pinMode(ledPin, board.MODES.OUTPUT);
     board.pinMode(ledPin, board.MODES.OUTPUT);
 }
  

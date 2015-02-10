@@ -5,6 +5,9 @@
     <body>
     <img src = "http://adaniya.red:50/?action=stream">
         <div>
+            <form id="myForm">
+                <input type="text" id="msg"><input type="submit" value="Send!">
+            </form>
             <p>
                 <button id="switchButton">turn on</button>
             </p>
@@ -20,6 +23,12 @@
             $(function(){
                 var socket = io.connect('http://adaniya.red:40');
  
+                $('#myForm').submit(function(e){
+                    e.preventDefault();          //即時処理されないように
+                    socket.emit('emit_from_client', $('#msg').val());
+                    $('#msg').val('').focus();          //テキストボックスの文字を残さない
+                });
+
                 socket.on('connect', function() {
                     $('#messages').append('<li>Connected to the server.</li>');            
                 });

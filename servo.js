@@ -50,7 +50,9 @@ io.sockets.on('connection', function(socket) {
     socket.on('emit_from_client', function(data){
         console.log(data);
         //socket.emit('emit_from_server', 'hello from server: ' + data);
-        servo.to(data);
+        if(data > 0 && data < 10){
+            servo.to(data);
+        }
     });
  
     socket.on('message', function(data) {

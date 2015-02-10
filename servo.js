@@ -9,6 +9,8 @@ var app = require('http').createServer(handler),
  
 var ledPin = 9;
 
+var dig = 5;
+
 function arduinoReady(err) {
     if (err) {
         console.log(err);
@@ -52,9 +54,10 @@ io.sockets.on('connection', function(socket) {
         //socket.emit('emit_from_server', 'hello from server: ' + data);
         if(data > 0 && data < 10){
             servo.to(data);
+            data = dig;
         }
     });
- 
+
     socket.on('message', function(data) {
         if (data == 'turn on') {
             console.log('+');
@@ -68,6 +71,14 @@ io.sockets.on('connection', function(socket) {
             //board.digitalWrite(ledPin, 10);
             //servo.to(10);
             socket.broadcast.send("who turned out the light?");
+        }
+        if(data == 'left'){
+            dig = dig - 1;
+            servo.to(dig);
+        }
+        if(data == 'right'){
+            dig = dig + 1;
+            servo.to(dig);
         }
         return;
     });

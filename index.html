@@ -8,6 +8,8 @@
             <form id="myForm">
                 <input type="text" id="msg"><input type="submit" value="Send!">
             </form>
+            <button id="leftdeg">left</button>
+            <button id="rightdeg">right</button>
             <p>
                 <button id="switchButton">turn on</button>
             </p>
@@ -50,7 +52,18 @@
                         $('#switchButton').text('turn off');
                     else 
                         $('#switchButton').text('turn on');
-                });    
+                });
+
+                $('#leftdeg').bind('click', function() {
+                    var message = $('#leftdeg').text();
+                    socket.send(message);
+                }); 
+
+                $('#rightdeg').bind('click', function() {
+                    var message = $('#rightdeg').text();
+                    socket.send(message);
+
+                });     
             });
         </script>
     </body>

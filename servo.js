@@ -50,20 +50,21 @@ io.sockets.on('connection', function(socket) {
     socket.on('emit_from_client', function(data){
         console.log(data);
         //socket.emit('emit_from_server', 'hello from server: ' + data);
+        servo.to(data);
     });
  
     socket.on('message', function(data) {
         if (data == 'turn on') {
             console.log('+');
             //board.digitalWrite(ledPin, 30);
-            servo.to(30);
+            //servo.to(30);
 
             socket.broadcast.send("let there be light!");
         }
         if (data == 'turn off') {
             console.log('-');
             //board.digitalWrite(ledPin, 10);
-            servo.to(10);
+            //servo.to(10);
             socket.broadcast.send("who turned out the light?");
         }
         return;

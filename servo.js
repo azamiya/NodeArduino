@@ -4,7 +4,7 @@ var app = require('http').createServer(handler),
     firmata = require('/usr/local/lib/node_modules/firmata'),
     board = new firmata.Board('/dev/ttyACM0', arduinoReady);
  
-var ledPin = 8;
+var ledPin = 9;
 
 function arduinoReady(err) {
     if (err) {
@@ -45,12 +45,12 @@ io.sockets.on('connection', function(socket) {
     socket.on('message', function(data) {
         if (data == 'turn on') {
             console.log('+');
-            board.digitalWrite(ledPin, 90);
+            board.digitalWrite(ledPin, 30);
             socket.broadcast.send("let there be light!");
         }
         if (data == 'turn off') {
             console.log('-');
-            board.digitalWrite(ledPin, 0);
+            board.digitalWrite(ledPin, 60);
             socket.broadcast.send("who turned out the light?");
         }
         return;

@@ -2,7 +2,7 @@ var five = require("johnny-five");
 var board = new five.Board();
 
 board.on("ready", function() {
-  var servo = new five.Servo(10);
+  var servo = new five.Servo(9);
 
   // Servo alternate constructor with options
   /*

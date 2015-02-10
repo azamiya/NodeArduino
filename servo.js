@@ -1,8 +1,11 @@
+var five = require("johnny-five");
+
 var app = require('http').createServer(handler), 
     io = require('/usr/local/lib/node_modules/socket.io').listen(app), 
     fs = require('fs'),
     firmata = require('/usr/local/lib/node_modules/firmata'),
-    board = new firmata.Board('/dev/ttyACM0', arduinoReady);
+    //board = new firmata.Board('/dev/ttyACM0', arduinoReady);
+    board = new five.Board({port : "/dev/ttyACM0"});
  
 var ledPin = 9;
 
@@ -38,20 +41,24 @@ function handler (req, res) {
 }
  
 // this handles socket.io comm from html files
- 
+
+board.on("ready", function(){ 
+var servo = new five.Servo(9);
 io.sockets.on('connection', function(socket) {
     socket.send('connected...');
  
     socket.on('message', function(data) {
         if (data == 'turn on') {
             console.log('+');
-            board.digitalWrite(ledPin, board.HIGH);
+            //board.digitalWrite(ledPin, 30);
+            servo.to(30);
 
             socket.broadcast.send("let there be light!");
         }
         if (data == 'turn off') {
             console.log('-');
-            board.digitalWrite(ledPin, board.LOW);
+            //board.digitalWrite(ledPin, 10);
+            servo.to(10);
             socket.broadcast.send("who turned out the light?");
         }
         return;
@@ -61,3 +68,5 @@ io.sockets.on('connection', function(socket) {
         socket.send('disconnected...');
     });
 });
+});
+

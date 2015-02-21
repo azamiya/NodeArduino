@@ -1,10 +1,15 @@
+//Use johnny-five to controll servo 
+var five = require("johnny-five");
+
 var app = require('http').createServer(handler), 
     io = require('/usr/local/lib/node_modules/socket.io').listen(app), 
     fs = require('fs'),
     firmata = require('/usr/local/lib/node_modules/firmata'),
-    board = new firmata.Board('/dev/ttyACM0', arduinoReady);
- 
+    //board = new firmata.Board('/dev/ttyACM0', arduinoReady);
+    board = new five.Board({port : "/dev/ttyACM0"});
+
 var ledPin = 13;
+var ServoPin_y = 9;
  
 function arduinoReady(err) {
     if (err) {

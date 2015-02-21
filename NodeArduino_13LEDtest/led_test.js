@@ -25,11 +25,11 @@ console.log("Listening on http://raspberrypi:8080...");
 // directs page requests to html files
  
 function handler (req, res) {
-  fs.readFile(__dirname + '/index.html',
+  fs.readFile(__dirname + '/led_test.html',
   function (err, data) {
     if (err) {
       res.writeHead(500);
-      return res.end('Error loading index.html');
+      return res.end('Error loading html file');
     }
  
     res.writeHead(200);

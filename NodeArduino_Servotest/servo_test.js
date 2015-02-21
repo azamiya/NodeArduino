@@ -55,23 +55,23 @@ board.on("ready", function(){
         socket.on('message', function(data) {
             if (data == 'turn on') {
                 console.log('+');
-                led.on();
+                //led.on();
                 //board.digitalWrite(ledPin, board.HIGH);
                 //socket.broadcast.send("let there be light!");
             }
             if (data == 'turn off') {
                 console.log('-');
-                led.off();
-                board.digitalWrite(ledPin, board.LOW);
+                //led.off();
+                //board.digitalWrite(ledPin, board.LOW);
                 //socket.broadcast.send("who turned out the light?");
             }
             if(data == 'left'){
                 console.log('left');
-                servo.to(30);
+                //servo.to(30);
             }
             if(data == 'right'){
                 console.log('right');
-                servo.to(60);
+                //servo.to(60);
             }
             return;
         });

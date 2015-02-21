@@ -26,6 +26,8 @@ function arduinoReady(err) {
 console.log("line 26");
 
 wss.on('connection', function(ws) {
+	console.log("line 29");
+
 	board.on("ready", function(){ 
 
     //value for johnny-five
@@ -33,7 +35,7 @@ wss.on('connection', function(ws) {
     var led = new five.Led(13);
     var y_rot;
 
-	console.log("line 36");
+	console.log("line 38");
 
 	ws.on('message', function(message) {
 		//console.log('received: %s', message);			

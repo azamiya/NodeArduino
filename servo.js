@@ -24,7 +24,7 @@ function arduinoReady(err) {
     board.pinMode(ledPin, board.MODES.OUTPUT);
 }
  
-//app.listen(8080);
+app.listen(8080);
 console.log("Listening on http://raspberrypi:8080...");
  
 // directs page requests to html files
@@ -88,5 +88,4 @@ io.sockets.on('connection', function(socket) {
     });
 });
 });
-app.listen(8080);
 

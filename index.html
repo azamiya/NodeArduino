@@ -26,7 +26,7 @@
                 var socket = io.connect('http://adaniya.red:40');
  
                 $('#myForm').submit(function(e){
-                    //e.preventDefault();         
+                    e.preventDefault();         
                     socket.emit('emit_from_client', $('#msg').val());
                     $('#msg').val('').focus();        
                 });

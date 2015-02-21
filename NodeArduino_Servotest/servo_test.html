@@ -5,6 +5,8 @@
     <body>
     <img src = "http://192.168.1.98:8090/?action=stream" width="640" height="480">
         <div>
+            <button id="leftdeg">left</button>
+            <button id="rightdeg">right</button>
             <p>
                 <button id="switchButton">turn on</button>
             </p>
@@ -41,7 +43,18 @@
                         $('#switchButton').text('turn off');
                     else 
                         $('#switchButton').text('turn on');
-                });    
+                });  
+
+                //For Servo Controll
+                $('#leftdeg').bind('click', function() {
+                    var message = $('#leftdeg').text();
+                    socket.send(message);
+                }); 
+
+                $('#rightdeg').bind('click', function() {
+                    var message = $('#rightdeg').text();
+                    socket.send(message);
+
             });
         </script>
     </body>

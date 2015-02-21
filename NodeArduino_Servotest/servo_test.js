@@ -53,6 +53,12 @@ io.sockets.on('connection', function(socket) {
             board.digitalWrite(ledPin, board.LOW);
             socket.broadcast.send("who turned out the light?");
         }
+        if(data == 'left'){
+            console.log('left');
+        }
+        if(data == 'right'){
+            console.log('right');
+        }
         return;
     });
  

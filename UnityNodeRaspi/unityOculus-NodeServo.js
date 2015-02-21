@@ -42,19 +42,16 @@ board.on("ready", function(){
 
 	console.log("before wss.on");
 	wss.on('connection', function(ws) {
-	console.log("after wss.on");
+	//console.log("after wss.on");
 
 	ws.on('message', function(message) {
-		console.log('received: %s', message);
-		console.log(message);
+		//console.log('received: %s', message);
+		//console.log(message);
 		var coords = message.split(' ');		
 		x_rot = Math.floor(coords[0]);
 		y_rot = Math.floor(coords[1]);
 		servo_x.to(x_rot);
 		servo_y.to(y_rot);
-		console.log(x_rot, y_rot);
 	});
-	ws.send('hello world');
-
 	}); 
 });

@@ -26,9 +26,9 @@
                 var socket = io.connect('http://adaniya.red:40');
  
                 $('#myForm').submit(function(e){
-                    e.preventDefault();          //即時処理されないように
+                    //e.preventDefault();         
                     socket.emit('emit_from_client', $('#msg').val());
-                    $('#msg').val('').focus();          //テキストボックスの文字を残さない
+                    $('#msg').val('').focus();        
                 });
 
                 socket.on('connect', function() {

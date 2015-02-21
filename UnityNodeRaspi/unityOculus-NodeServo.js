@@ -30,7 +30,11 @@ board.on("ready", function(){
 
 	//value for johnny-five
 	var servo_x = new five.Servo(9); 
-	var servo_y = new five.Servo(11); 
+	var servo_y = new five.Servo(11);
+	
+	//Initialize
+	servo_x.to(90);
+	servo_y.to(90); 
 
 	var led = new five.Led(13);
 	var x_rot;

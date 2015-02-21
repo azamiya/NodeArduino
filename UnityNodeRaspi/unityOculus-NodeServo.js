@@ -29,8 +29,11 @@ board.on("ready", function(){
 	console.log("after board.on");
 
 	//value for johnny-five
-	var servo = new five.Servo(9); 
+	var servo_x = new five.Servo(9); 
+	var servo_y = new five.Servo(11); 
+
 	var led = new five.Led(13);
+	var x_rot;
 	var y_rot;
 
 	console.log("before wss.on");
@@ -39,10 +42,13 @@ board.on("ready", function(){
 
 	ws.on('message', function(message) {
 		console.log('received: %s', message);
-		console.log(message);			
-		y_rot = Math.floor(message);
-		servo.to(y_rot);
-		console.log(y_rot);
+		console.log(message);
+		var coords[] = message.split(' ');		
+		x_rot = Math.floor(coords[0]);
+		y_rot = Math.floor(coords[1]);
+		servo_x.to(x_rot);
+		servo_y.to(y_rot);
+		console.log(x_rot, y_rot);
 	});
 	ws.send('hello world');
 

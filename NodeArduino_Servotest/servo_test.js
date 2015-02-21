@@ -67,11 +67,11 @@ board.on("ready", function(){
             }
             if(data == 'left'){
                 console.log('left');
-                //servo.to(30);
+                servo.to(30);
             }
             if(data == 'right'){
                 console.log('right');
-                //servo.to(60);
+                servo.to(60);
             }
             return;
         });

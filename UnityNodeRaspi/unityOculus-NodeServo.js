@@ -32,15 +32,14 @@ wss.on('connection', function(ws) {
     var servo = new five.Servo(9); 
     var led = new five.Led(13);
     var y_rot;
-    
-		ws.on('message', function(message) {
-			//console.log('received: %s', message);
-			y_rot = Number(message);
-		});
-		ws.send('hello world');
-	});
 
+	ws.on('message', function(message) {
+		//console.log('received: %s', message);			
+		y_rot = Number(message);
+	});
+	ws.send('hello world');
+	
 	servo.to(y_rot);
 	console.log(y_rot);
-    
+	}); 
 });

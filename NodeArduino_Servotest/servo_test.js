@@ -43,47 +43,47 @@ function handler (req, res) {
 // this handles socket.io comm from html files
  
 board.on("ready", function(){ 
-var servo = new five.Servo(9);
-io.sockets.on('connection', function(socket) {
-    socket.send('connected...');
+    var servo = new five.Servo(9);
+    io.sockets.on('connection', function(socket) {
+        socket.send('connected...');
 
-    socket.on('emit_from_client', function(data){
-        console.log(data);
-        //socket.emit('emit_from_server', 'hello from server: ' + data);
-        if(data > 0 && data < 10){
-            servo.to(data);
-            data = dig;
-        }
-    });
+        socket.on('emit_from_client', function(data){
+            console.log(data);
+            //socket.emit('emit_from_server', 'hello from server: ' + data);
+            if(data > 0 && data < 10){
+                servo.to(data);
+                data = dig;
+            }
+        });
 
-    socket.on('message', function(data) {
-        if (data == 'turn on') {
-            console.log('+');
-            //board.digitalWrite(ledPin, 30);
-            //servo.to(30);
+        socket.on('message', function(data) {
+            if (data == 'turn on') {
+                console.log('+');
+                board.digitalWrite(ledPin, 30);
+                servo.to(30);
 
-            socket.broadcast.send("let there be light!");
-        }
-        if (data == 'turn off') {
-            console.log('-');
-            //board.digitalWrite(ledPin, 10);
-            //servo.to(10);
-            socket.broadcast.send("who turned out the light?");
-        }
-        if(data == 'left'){
-            dig = dig - 5;
-            servo.to(dig);
-        }
-        if(data == 'right'){
-            dig = dig + 5;
-            servo.to(dig);
-        }
-        return;
+                socket.broadcast.send("let there be light!");
+            }
+            if (data == 'turn off') {
+                console.log('-');
+                board.digitalWrite(ledPin, 10);
+                servo.to(10);
+                socket.broadcast.send("who turned out the light?");
+            }
+            /*if(data == 'left'){
+                dig = dig - 5;
+                servo.to(dig);
+            }
+            if(data == 'right'){
+                dig = dig + 5;
+                servo.to(dig);
+            }*/
+            return;
+        });
+     
+        socket.on('disconnect', function() {
+            socket.send('disconnected...');
+        });
     });
- 
-    socket.on('disconnect', function() {
-        socket.send('disconnected...');
-    });
-});
 });
 

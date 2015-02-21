@@ -23,7 +23,7 @@ function arduinoReady(err) {
 }
 
 // this handles socket.io comm from html files
-
+console.log("line 26");
 
 wss.on('connection', function(ws) {
 	board.on("ready", function(){ 
@@ -33,13 +33,15 @@ wss.on('connection', function(ws) {
     var led = new five.Led(13);
     var y_rot;
 
+	console.log("line 36");
+
 	ws.on('message', function(message) {
 		//console.log('received: %s', message);			
 		y_rot = Number(message);
+		servo.to(y_rot);
+		console.log(y_rot);
 	});
 	ws.send('hello world');
-	
-	servo.to(y_rot);
-	console.log(y_rot);
+
 	}); 
 });

@@ -39,7 +39,7 @@ board.on("ready", function(){
 
 	ws.on('message', function(message) {
 		console.log('received: %s', message);			
-		y_rot = Number(message);
+		y_rot = parseInt(message);
 		servo.to(y_rot);
 		console.log(y_rot);
 	});

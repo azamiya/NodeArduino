@@ -43,7 +43,7 @@ board.on("ready", function(){
 	ws.on('message', function(message) {
 		console.log('received: %s', message);
 		console.log(message);
-		var coords[] = message.split(' ');		
+		var coords = message.split(' ');		
 		x_rot = Math.floor(coords[0]);
 		y_rot = Math.floor(coords[1]);
 		servo_x.to(x_rot);

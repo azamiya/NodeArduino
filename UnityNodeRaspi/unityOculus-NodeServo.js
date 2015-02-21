@@ -54,7 +54,4 @@ board.on("ready", function(){
 			servo_y.to(y_rot);
 		});	
 	}); 
-	//Initialize
-	servo_x.to(90);
-	servo_y.to(90); 
 });

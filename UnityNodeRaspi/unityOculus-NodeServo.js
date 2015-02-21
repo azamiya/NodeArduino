@@ -23,13 +23,13 @@ function arduinoReady(err) {
 }
 
 // this handles socket.io comm from html files
-console.log("line 26");
+console.log("before wss.on");
 
 wss.on('connection', function(ws) {
-	console.log("line 29");
+	console.log("after wss.on");
 
 	board.on("ready", function(){ 
-
+	console.log("after board.on");
     //value for johnny-five
     var servo = new five.Servo(9); 
     var led = new five.Led(13);

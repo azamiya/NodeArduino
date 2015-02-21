@@ -52,9 +52,9 @@ board.on("ready", function(){
 			y_rot = Math.floor(coords[1]);
 			servo_x.to(x_rot);
 			servo_y.to(y_rot);
-		});
+		});	
+	}); 
 	//Initialize
 	servo_x.to(90);
-	servo_y.to(90); 	
-	}); 
+	servo_y.to(90); 
 });

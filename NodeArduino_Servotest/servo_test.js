@@ -43,31 +43,33 @@ function handler (req, res) {
 }
  
 // this handles socket.io comm from html files
- 
-io.sockets.on('connection', function(socket) {
-    socket.send('connected...');
-    
-    socket.on('message', function(data) {
-        if (data == 'turn on') {
-            console.log('+');
-            board.digitalWrite(ledPin, board.HIGH);
-            socket.broadcast.send("let there be light!");
-        }
-        if (data == 'turn off') {
-            console.log('-');
-            board.digitalWrite(ledPin, board.LOW);
-            socket.broadcast.send("who turned out the light?");
-        }
-        if(data == 'left'){
-            console.log('left');
-        }
-        if(data == 'right'){
-            console.log('right');
-        }
-        return;
-    });
- 
-    socket.on('disconnect', function() {
-        socket.send('disconnected...');
+board.on("ready", function(){ 
+    var servo = new five.Servo(9); 
+    io.sockets.on('connection', function(socket) {
+        socket.send('connected...');
+        
+        socket.on('message', function(data) {
+            if (data == 'turn on') {
+                console.log('+');
+                board.digitalWrite(ledPin, board.HIGH);
+                socket.broadcast.send("let there be light!");
+            }
+            if (data == 'turn off') {
+                console.log('-');
+                board.digitalWrite(ledPin, board.LOW);
+                socket.broadcast.send("who turned out the light?");
+            }
+            if(data == 'left'){
+                console.log('left');
+            }
+            if(data == 'right'){
+                console.log('right');
+            }
+            return;
+        });
+     
+        socket.on('disconnect', function() {
+            socket.send('disconnected...');
+        });
     });
 });

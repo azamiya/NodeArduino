@@ -44,14 +44,17 @@ board.on("ready", function(){
 	wss.on('connection', function(ws) {
 	//console.log("after wss.on");
 
-	ws.on('message', function(message) {
-		//console.log('received: %s', message);
-		//console.log(message);
-		var coords = message.split(' ');		
-		x_rot = Math.floor(coords[0]);
-		y_rot = Math.floor(coords[1]);
-		servo_x.to(x_rot);
-		servo_y.to(y_rot);
-	});
+		ws.on('message', function(message) {
+			//console.log('received: %s', message);
+			//console.log(message);
+			var coords = message.split(' ');		
+			x_rot = Math.floor(coords[0]);
+			y_rot = Math.floor(coords[1]);
+			servo_x.to(x_rot);
+			servo_y.to(y_rot);
+		});
+	//Initialize
+	servo_x.to(90);
+	servo_y.to(90); 	
 	}); 
 });

@@ -22,10 +22,6 @@ function arduinoReady(err) {
     board.pinMode(ledPin, board.MODES.OUTPUT);
 }
 
-
-
-
-
 // this handles socket.io comm from html files
 board.on("ready", function(){ 
 
@@ -33,7 +29,6 @@ board.on("ready", function(){
     var servo = new five.Servo(9); 
     var led = new five.Led(13);
     var y_rot;
-
 
 	wss.on('connection', function(ws) {
 		ws.on('message', function(message) {
@@ -44,6 +39,7 @@ board.on("ready", function(){
 	});
 
 	servo.to(y_rot);
+	console.log(y_rot);
     
 });
 

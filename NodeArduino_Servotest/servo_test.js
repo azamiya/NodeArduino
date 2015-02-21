@@ -46,7 +46,7 @@ function handler (req, res) {
  
 // this handles socket.io comm from html files
  
-five.board().on("ready", function(){ 
+board.on("ready", function(){ 
     console.log("line50");
     var servo = new five.Servo(9);
     io.sockets.on('connection', function(socket) {

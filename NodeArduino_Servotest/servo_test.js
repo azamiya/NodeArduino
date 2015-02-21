@@ -55,13 +55,13 @@ board.on("ready", function(){
         socket.on('message', function(data) {
             if (data == 'turn on') {
                 console.log('+');
-                //led.on();
+                led.on();
                 //board.digitalWrite(ledPin, board.HIGH);
                 //socket.broadcast.send("let there be light!");
             }
             if (data == 'turn off') {
                 console.log('-');
-                //led.off();
+                led.off();
                 //board.digitalWrite(ledPin, board.LOW);
                 //socket.broadcast.send("who turned out the light?");
             }

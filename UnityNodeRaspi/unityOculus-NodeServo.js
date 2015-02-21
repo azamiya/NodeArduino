@@ -38,8 +38,9 @@ board.on("ready", function(){
 	console.log("after wss.on");
 
 	ws.on('message', function(message) {
-		console.log('received: %s', message);			
-		y_rot = parseInt(message);
+		console.log('received: %s', message);
+		console.log(message);			
+		y_rot = Math.floor(message);
 		servo.to(y_rot);
 		console.log(y_rot);
 	});

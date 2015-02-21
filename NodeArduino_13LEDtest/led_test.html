@@ -17,7 +17,7 @@
  
         <script>
             $(function(){
-                var socket = io.connect('http://raspberrypi:8080');
+                var socket = io.connect('http://192.168.1.98:8080');
  
                 socket.on('connect', function() {
                     $('#messages').append('<li>Connected to the server.</li>');            

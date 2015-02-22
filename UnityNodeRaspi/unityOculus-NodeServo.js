@@ -51,7 +51,7 @@ board.on("ready", function(){
 			var coords = message.split(' ');		
 			x_rot = Math.floor(coords[0]);
 			y_rot = Math.floor(coords[1]);
-			xbox_key = Math.floor(coords[3]);
+			xbox_key = Math.floor(coords[2]);
 			servo_x.to(x_rot);
 			servo_y.to(y_rot);
 			console.log(xbox_key);

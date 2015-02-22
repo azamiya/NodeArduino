@@ -2,7 +2,9 @@ var five = require("johnny-five"),
   board = new five.Board();
 
 board.on("ready", function() {
-  var motor;
+  var motor_R;
+  var motor_L;
+
   /*
     Seeed Studio Motor Shield V1.0, V2.0
       Motor A
@@ -29,7 +31,7 @@ board.on("ready", function() {
    */
 
 
-  motor = new five.Motor({
+  motor_R = new five.Motor({
     pins: {
       pwm: 4,
       dir: 5,
@@ -37,7 +39,13 @@ board.on("ready", function() {
     }
   });
 
-
+  motor_L = new five.Motor({
+    pins: {
+      pwm: 7,
+      dir: 6,
+      cdir: 5
+    }
+  });
 
 
   board.repl.inject({

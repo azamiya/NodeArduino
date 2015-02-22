@@ -6,10 +6,10 @@ board.on("ready", function() {
   this.pinMode(3, five.Pin.ANALOG);
   this.analogWrite(3, 10);
 
-  this.pinMode(4, five.Pin.OUTPUT);
+  this.pinMode(2, five.Pin.OUTPUT);
   this.digitalWrite(2, 1);
 
-  this.pinMode(7, five.Pin.OUTPUT);
+  this.pinMode(1, five.Pin.OUTPUT);
   this.digitalWrite(1, 0);
 
 });

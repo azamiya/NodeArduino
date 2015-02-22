@@ -31,6 +31,11 @@ board.on("ready", function(){
 	//value for johnny-five
 	var servo_x = new five.Servo(9); 
 	var servo_y = new five.Servo(11);
+
+	//pin for motor
+	this.pinMode(3, five.Pin.ANALOG);
+  	this.pinMode(2, five.Pin.OUTPUT);
+	this.pinMode(1, five.Pin.OUTPUT);
 	
 	//Initialize
 	servo_x.to(90);
@@ -54,7 +59,23 @@ board.on("ready", function(){
 			xbox_key = Math.floor(coords[2]);
 			servo_x.to(x_rot);
 			servo_y.to(y_rot);
-			console.log(xbox_key);
+			//console.log(xbox_key);
+			if(xbox_key = 1){
+				//forward
+			  this.analogWrite(3, 50);
+			  this.digitalWrite(2, 1);
+			  this.digitalWrite(1, 0);
+			}else if(xbox_key = 0){
+				//back
+			  this.analogWrite(3, 50);
+			  this.digitalWrite(2, 0);
+			  this.digitalWrite(1, 1);
+			}else{
+				//stop
+			  this.analogWrite(3, 0);
+			  this.digitalWrite(2, 0);
+			  this.digitalWrite(1, 0);
+			}
 		});	
 	}); 
 });

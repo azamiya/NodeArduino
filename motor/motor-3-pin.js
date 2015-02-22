@@ -49,7 +49,7 @@ board.on("ready", function() {
 
 
   board.repl.inject({
-    //motor_R: motor_R,
+    motor_R: motor_R,
     motor_L: motor_L
   });
 
@@ -110,7 +110,7 @@ board.on("ready", function() {
   });
 
   // set the motor going forward full speed
-  motor_R.forward(1);
+  //motor_R.forward(1);
 
   // set the motor going forward full speed
   motor_L.forward(1);

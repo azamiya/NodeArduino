@@ -98,6 +98,20 @@ board.on("ready", function() {
     });
   });
 
+  motor_L.on("reverse", function(err, timestamp) {
+    console.log("reverse", timestamp);
+
+    // demonstrate braking after 5 seconds
+    board.wait(1000, function() {
+
+      // Brake for 500ms and call stop()
+      motor_R.brake(10);
+    });
+  });
+
   // set the motor going forward full speed
-  motor_R.forward(10);
+  motor_R.forward(1);
+
+  // set the motor going forward full speed
+  motor_L.forward(1);
 });

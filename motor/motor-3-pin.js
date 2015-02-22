@@ -61,7 +61,7 @@ board.on("ready", function() {
 
     // demonstrate switching to reverse after 5 seconds
     board.wait(5000, function() {
-      motor.reverse(255);
+      motor.reverse(10);
     });
   });
 
@@ -77,5 +77,5 @@ board.on("ready", function() {
   });
 
   // set the motor going forward full speed
-  motor.forward(255);
+  motor.forward(10);
 });

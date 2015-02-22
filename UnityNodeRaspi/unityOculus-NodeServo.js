@@ -65,16 +65,19 @@ board.on("ready", function(){
 			  board.analogWrite(3, 50);
 			  board.digitalWrite(2, board.HIGH);
 			  board.digitalWrite(1, board.LOW);
+			  console.log("forward");
 			}else if(xbox_key = 0){
 				//back
 			  board.analogWrite(3, 50);
 			  board.digitalWrite(2, board.LOW);
 			  board.digitalWrite(1, board.HIGH);
+			  console.log("back");
 			}else{
 				//stop
 			  board.analogWrite(3, 0);
-			  board.digitalWrite(2, board.LOW);
-			  board.digitalWrite(1, board.LOW);
+			  board.digitalWrite(2, board.HIGH);
+			  board.digitalWrite(1, board.HIGH);
+			  console.log("stop");			  
 			}
 		});	
 	}); 

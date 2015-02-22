@@ -54,7 +54,7 @@ board.on("ready", function(){
 			xbox_key = Math.floor(coords[3]);
 			servo_x.to(x_rot);
 			servo_y.to(y_rot);
-			console.log("xbox_key");
+			console.log(xbox_key);
 		});	
 	}); 
 });

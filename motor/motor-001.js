@@ -9,7 +9,7 @@ board.on("ready", function() {
   this.pinMode(6, five.Pin.OUTPUT);
   this.digitalWrite(6, 1);
 
-  this.pinMode(7, five.Pin.OUTPUT);
+  /*this.pinMode(7, five.Pin.OUTPUT);
   this.digitalWrite(7, 0);
 
   this.pinMode(5, five.Pin.ANALOG);
@@ -19,6 +19,6 @@ board.on("ready", function() {
   this.digitalWrite(8, 0);
 
   this.pinMode(9, five.Pin.OUTPUT);
-  this.digitalWrite(9, 1);
+  this.digitalWrite(9, 1);*/
 
 });

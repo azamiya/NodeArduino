@@ -49,7 +49,8 @@ board.on("ready", function() {
 
 
   board.repl.inject({
-    motor: motor_R
+    motor_R: motor_R,
+    motor_L: motor_L
   });
 
   motor_R.on("start", function(err, timestamp) {

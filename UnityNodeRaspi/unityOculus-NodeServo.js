@@ -33,9 +33,9 @@ board.on("ready", function(){
 	var servo_y = new five.Servo(11);
 
 	//pin for motor
-	this.pinMode(3, five.Pin.ANALOG);
-  	this.pinMode(2, five.Pin.OUTPUT);
-	this.pinMode(1, five.Pin.OUTPUT);
+	board.pinMode(3, board.MODES.ANALOG);
+  	board.pinMode(2, board.MODES.OUTPUT);
+	board.pinMode(1, board.MODES.OUTPUT);
 	
 	//Initialize
 	servo_x.to(90);
@@ -63,8 +63,8 @@ board.on("ready", function(){
 			if(xbox_key = 1){
 				//forward
 			  analogWrite(3, 50);
-			  digitalWrite(2, 1);
-			  digitalWrite(1, 0);
+			  digitalWrite(2, HIGH);
+			  digitalWrite(1, LOW);
 			}else if(xbox_key = 0){
 				//back
 			  analogWrite(3, 50);

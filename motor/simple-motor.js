@@ -36,6 +36,21 @@ board.on("ready", function() {
   // Start the motor at maximum speed
   //motor.forward(255);
   motor_L.forward(10);
+
+  motor_R.on("forward", function(err, timestamp) {
+    // demonstrate braking after 5 seconds
+    board.wait(50, function() {
+      motor_R.brake();
+    });
+  });
+
+  motor_R.on("brake", function(err, timestamp) {
+    // Release the brake after .1 seconds
+    board.wait(10, function() {
+      motor_R.stop();
+    });
+  });
+
   motor_R.forward(10);
 
 

@@ -33,7 +33,7 @@ board.on("ready", function(){
 	var servo_y = new five.Servo(11);
 
 	//pin for motor
-	//board.pinMode(3, board.MODES.ANALOG);
+	board.pinMode(3, five.Pin.ANALOG);
   	board.pinMode(2, five.Pin.OUTPUT);
 	board.pinMode(1, five.Pin.OUTPUT);
 	
@@ -62,17 +62,17 @@ board.on("ready", function(){
 			//console.log(xbox_key);
 			if(xbox_key = 1){
 				//forward
-			  //board.analogWrite(3, 50);
+			  board.analogWrite(3, 50);
 			  board.digitalWrite(2, board.HIGH);
 			  board.digitalWrite(1, board.LOW);
 			}else if(xbox_key = 0){
 				//back
-			  //board.analogWrite(3, 50);
+			  board.analogWrite(3, 50);
 			  board.digitalWrite(2, board.LOW);
 			  board.digitalWrite(1, board.HIGH);
 			}else{
 				//stop
-			  //board.analogWrite(3, 0);
+			  board.analogWrite(3, 0);
 			  board.digitalWrite(2, board.LOW);
 			  board.digitalWrite(1, board.LOW);
 			}

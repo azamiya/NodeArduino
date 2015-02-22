@@ -62,19 +62,19 @@ board.on("ready", function(){
 			//console.log(xbox_key);
 			if(xbox_key = 1){
 				//forward
-			  this.analogWrite(3, 50);
-			  this.digitalWrite(2, 1);
-			  this.digitalWrite(1, 0);
+			  analogWrite(3, 50);
+			  digitalWrite(2, 1);
+			  digitalWrite(1, 0);
 			}else if(xbox_key = 0){
 				//back
-			  this.analogWrite(3, 50);
-			  this.digitalWrite(2, 0);
-			  this.digitalWrite(1, 1);
+			  analogWrite(3, 50);
+			  digitalWrite(2, 0);
+			  digitalWrite(1, 1);
 			}else{
 				//stop
-			  this.analogWrite(3, 0);
-			  this.digitalWrite(2, 0);
-			  this.digitalWrite(1, 0);
+			  analogWrite(3, 0);
+			  digitalWrite(2, 0);
+			  digitalWrite(1, 0);
 			}
 		});	
 	}); 

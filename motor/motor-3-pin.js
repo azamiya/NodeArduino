@@ -31,9 +31,9 @@ board.on("ready", function() {
 
   motor = new five.Motor({
     pins: {
-      pwm: 9,
-      dir: 8,
-      cdir: 11
+      pwm: 4,
+      dir: 5,
+      cdir: 6
     }
   });
 

@@ -49,7 +49,7 @@ board.on("ready", function() {
 
 
   board.repl.inject({
-    motor_R: motor_R,
+    //motor_R: motor_R,
     motor_L: motor_L
   });
 

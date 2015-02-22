@@ -35,7 +35,7 @@ board.on("ready", function(){
 	//pin for motor
 	//board.pinMode(3, board.MODES.ANALOG);
   	board.pinMode(2, five.Pin.OUTPUT);
-	board.pinMode(1, five.Pin.OUTPUT;
+	board.pinMode(1, five.Pin.OUTPUT);
 	
 	//Initialize
 	servo_x.to(90);

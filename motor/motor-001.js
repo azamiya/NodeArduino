@@ -16,9 +16,9 @@ board.on("ready", function() {
   this.analogWrite(5, 10);
 
   this.pinMode(8, five.Pin.OUTPUT);
-  this.digitalWrite(8, 1);
+  this.digitalWrite(8, 0);
 
   this.pinMode(9, five.Pin.OUTPUT);
-  this.digitalWrite(9, 0);
+  this.digitalWrite(9, 1);
 
 });

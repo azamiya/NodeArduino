@@ -5,9 +5,9 @@ board.on("ready", function() {
 
    var motor_R = new five.Motor({
     pins: {
-      pwm: 10,
-      dir: 9,
-      brake: 8
+      pwm: 5,
+      dir: 8,
+      brake: 9
     }
   });
 

@@ -12,13 +12,13 @@ board.on("ready", function() {
   this.pinMode(7, five.Pin.OUTPUT);
   this.digitalWrite(7, 0);
 
-  this.pinMode(6, five.Pin.ANALOG);
+  /*this.pinMode(6, five.Pin.ANALOG);
   this.analogWrite(6, 10);
 
   this.pinMode(8, five.Pin.OUTPUT);
   this.digitalWrite(8, 1);
 
   this.pinMode(12, five.Pin.OUTPUT);
-  this.digitalWrite(12, 0);
+  this.digitalWrite(12, 0);*/
 
 });

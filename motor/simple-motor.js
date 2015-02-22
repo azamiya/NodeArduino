@@ -22,14 +22,14 @@ board.on("ready", function() {
   motor_L.on("forward", function(err, timestamp) {
     // demonstrate braking after 5 seconds
     board.wait(50, function() {
-      motor.brake();
+      motor_L.brake();
     });
   });
 
   motor_L.on("brake", function(err, timestamp) {
     // Release the brake after .1 seconds
     board.wait(10, function() {
-      motor.stop();
+      motor_L.stop();
     });
   });
 

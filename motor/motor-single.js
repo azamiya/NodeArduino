@@ -2,8 +2,7 @@ var five = require("johnny-five"),
   board = new five.Board();
 
 board.on("ready", function() {
-  var motor_R;
-  var motor_L;
+  var motor;
 
   /*
     Seeed Studio Motor Shield V1.0, V2.0
@@ -31,7 +30,7 @@ board.on("ready", function() {
    */
 
 
-  motor_R = new five.Motor({
+  motor = new five.Motor({
     pins: {
       pwm: 3,
       dir: 2,
@@ -39,45 +38,19 @@ board.on("ready", function() {
     }
   });
 
-  motor_L = new five.Motor({
-    pins: {
-      pwm: 7,
-      dir: 6,
-      cdir: 5
-    }
-  });
-
-
   board.repl.inject({
-    motor: motor_R, motor_L
+    motor: motor
   });
 
-  motor_R.on("start", function(err, timestamp) {
+  motor.on("start", function(err, timestamp) {
     console.log("start", timestamp);
   });
 
-  motor_L.on("start", function(err, timestamp) {
-    console.log("start", timestamp);
-  });
-
-  motor_R.on("brake", function(err, timestamp) {
+  motor.on("brake", function(err, timestamp) {
     console.log("automated brake on timer", timestamp);
   });
 
-  motor_L.on("brake", function(err, timestamp) {
-    console.log("automated brake on timer", timestamp);
-  });
-
-  motor_R.on("forward", function(err, timestamp) {
-    console.log("forward", timestamp);
-
-    // demonstrate switching to reverse after 5 seconds
-    board.wait(5000, function() {
-      motor.reverse(10);
-    });
-  });
-
-  motor_L.on("forward", function(err, timestamp) {
+  motor.on("forward", function(err, timestamp) {
     console.log("forward", timestamp);
 
     // demonstrate switching to reverse after 5 seconds

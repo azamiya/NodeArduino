@@ -48,9 +48,9 @@ board.on("ready", function() {
   });
 
 
-  /*board.repl.inject({
-    motor: motor_R, motor_L
-  });*/
+  board.repl.inject({
+    motor: motor_R
+  });
 
   motor_R.on("start", function(err, timestamp) {
     console.log("start", timestamp);
@@ -72,7 +72,7 @@ board.on("ready", function() {
     console.log("forward", timestamp);
 
     // demonstrate switching to reverse after 5 seconds
-    board.wait(5000, function() {
+    board.wait(1000, function() {
       motor_R.reverse(10);
     });
   });
@@ -81,7 +81,7 @@ board.on("ready", function() {
     console.log("forward", timestamp);
 
     // demonstrate switching to reverse after 5 seconds
-    board.wait(5000, function() {
+    board.wait(1000, function() {
       motor_R.reverse(10);
     });
   });
@@ -90,7 +90,7 @@ board.on("ready", function() {
     console.log("reverse", timestamp);
 
     // demonstrate braking after 5 seconds
-    board.wait(5000, function() {
+    board.wait(1000, function() {
 
       // Brake for 500ms and call stop()
       motor_R.brake(500);

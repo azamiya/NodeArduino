@@ -35,7 +35,7 @@ board.on("ready", function() {
     pins: {
       pwm: 3,
       dir: 2,
-      cdir:1
+      cdir: 1
     }
   });
 
@@ -49,28 +49,28 @@ board.on("ready", function() {
 
 
   board.repl.inject({
-    motor_R: motor_R,
+    //motor_R: motor_R,
     motor_L: motor_L
   });
 
   motor_R.on("start", function(err, timestamp) {
-    console.log("start", timestamp);
+    console.log("start_R", timestamp);
   });
 
   motor_L.on("start", function(err, timestamp) {
-    console.log("start", timestamp);
+    console.log("start_L", timestamp);
   });
 
   motor_R.on("brake", function(err, timestamp) {
-    console.log("automated brake on timer", timestamp);
+    console.log("automated brake on timer_R", timestamp);
   });
 
   motor_L.on("brake", function(err, timestamp) {
-    console.log("automated brake on timer", timestamp);
+    console.log("automated brake on timer_L", timestamp);
   });
 
   motor_R.on("forward", function(err, timestamp) {
-    console.log("forward", timestamp);
+    console.log("forward_R", timestamp);
 
     // demonstrate switching to reverse after 5 seconds
     board.wait(1000, function() {
@@ -79,16 +79,16 @@ board.on("ready", function() {
   });
 
   motor_L.on("forward", function(err, timestamp) {
-    console.log("forward", timestamp);
+    console.log("forward_L", timestamp);
 
     // demonstrate switching to reverse after 5 seconds
     board.wait(1000, function() {
-      motor_R.reverse(10);
+      motor_L.reverse(10);
     });
   });
 
   motor_R.on("reverse", function(err, timestamp) {
-    console.log("reverse", timestamp);
+    console.log("reverse_R", timestamp);
 
     // demonstrate braking after 5 seconds
     board.wait(1000, function() {
@@ -99,13 +99,13 @@ board.on("ready", function() {
   });
 
   motor_L.on("reverse", function(err, timestamp) {
-    console.log("reverse", timestamp);
+    console.log("reverse_L", timestamp);
 
     // demonstrate braking after 5 seconds
     board.wait(1000, function() {
 
       // Brake for 500ms and call stop()
-      motor_R.brake(10);
+      motor_L.brake(10);
     });
   });
 

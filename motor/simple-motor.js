@@ -3,11 +3,19 @@ var five = require("johnny-five"),
 
 board.on("ready", function() {
 
-  var motor = new five.Motor({
+  var motor_L = new five.Motor({
     pins: {
       pwm: 3,
       dir: 2,
       brake: 1
+    }
+  });
+
+   var motor_R = new five.Motor({
+    pins: {
+      pwm: 7,
+      dir: 6,
+      brake: 5
     }
   });
 
@@ -20,13 +28,15 @@ board.on("ready", function() {
 
   motor.on("brake", function(err, timestamp) {
     // Release the brake after .1 seconds
-    board.wait(100, function() {
+    board.wait(10, function() {
       motor.stop();
     });
   });
 
   // Start the motor at maximum speed
   //motor.forward(255);
-  motor.forward(100);
+  motor_L.forward(10);
+  motor_R.forward(10);
+
 
 });

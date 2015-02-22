@@ -49,24 +49,15 @@ board.on("ready", function() {
 
 
   board.repl.inject({
-    //motor_R: motor_R,
-    motor_L: motor_L
+    motor_R: motor_R,
   });
 
   motor_R.on("start", function(err, timestamp) {
     console.log("start_R", timestamp);
   });
 
-  motor_L.on("start", function(err, timestamp) {
-    console.log("start_L", timestamp);
-  });
-
   motor_R.on("brake", function(err, timestamp) {
     console.log("automated brake on timer_R", timestamp);
-  });
-
-  motor_L.on("brake", function(err, timestamp) {
-    console.log("automated brake on timer_L", timestamp);
   });
 
   motor_R.on("forward", function(err, timestamp) {
@@ -78,15 +69,6 @@ board.on("ready", function() {
     });
   });
 
-  motor_L.on("forward", function(err, timestamp) {
-    console.log("forward_L", timestamp);
-
-    // demonstrate switching to reverse after 5 seconds
-    board.wait(1000, function() {
-      motor_L.reverse(10);
-    });
-  });
-
   motor_R.on("reverse", function(err, timestamp) {
     console.log("reverse_R", timestamp);
 
@@ -95,6 +77,27 @@ board.on("ready", function() {
 
       // Brake for 500ms and call stop()
       motor_R.brake(500);
+    });
+  });
+
+  board.repl.inject({
+    motor_L: motor_L,
+  });
+
+  motor_L.on("start", function(err, timestamp) {
+    console.log("start_L", timestamp);
+  });
+
+  motor_L.on("brake", function(err, timestamp) {
+    console.log("automated brake on timer_L", timestamp);
+  });
+
+  motor_L.on("forward", function(err, timestamp) {
+    console.log("forward_L", timestamp);
+
+    // demonstrate switching to reverse after 5 seconds
+    board.wait(1000, function() {
+      motor_L.reverse(10);
     });
   });
 
@@ -110,7 +113,7 @@ board.on("ready", function() {
   });
 
   // set the motor going forward full speed
-  //motor_R.forward(1);
+  motor_R.forward(1);
 
   // set the motor going forward full speed
   motor_L.forward(1);

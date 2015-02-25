@@ -63,13 +63,13 @@ board.on("ready", function(){
 			//console.log(xbox_key);
 			if(xbox_key === 1){
 				//forward
-			  board.analogWrite(3, 50);
+			  board.analogWrite(3, 200);
 			  board.digitalWrite(2, board.HIGH);
 			  board.digitalWrite(4, board.LOW);
 			  console.log("forward");
 			}else if(xbox_key === 0){
 				//back
-			  board.analogWrite(3, 1);
+			  board.analogWrite(3, 200);
 			  board.digitalWrite(2, board.LOW);
 			  board.digitalWrite(4, board.HIGH);
 			  console.log("back");

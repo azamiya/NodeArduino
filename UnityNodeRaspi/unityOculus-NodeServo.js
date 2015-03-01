@@ -3,8 +3,11 @@ var five = require("johnny-five");
 
 var WebSocketServer = require('ws').Server,
 	wss = new WebSocketServer({port: 8124}),
-	firmata = require('/usr/local/lib/node_modules/firmata'),
-    board = new five.Board({port : "/dev/ttyACM0"});
+	firmata = require('/usr/local/lib/node_modules/firmata'),					//For RasPi
+	//firmata = require('./node_modules/johnny-five/node_modules/firmata'),		//For Mac
+    board = new five.Board({port : "/dev/ttyACM0"});							//For RasPi
+    //board = new five.Board({port : "/dev/cu.usbmodem1411"});					//For Mac
+
 
     var ledPin = 13;
 	var ServoPin_y = 9;
@@ -66,19 +69,19 @@ board.on("ready", function(){
 			  board.analogWrite(3, 200);
 			  board.digitalWrite(2, board.HIGH);
 			  board.digitalWrite(1, board.LOW);
-			  console.log("forward");
+			  //console.log("forward");
 			}else if(xbox_key === 0){
 				//back
 			  board.analogWrite(3, 200);
 			  board.digitalWrite(2, board.LOW);
 			  board.digitalWrite(1, board.HIGH);
-			  console.log("back");
+			  //console.log("back");
 			}else{
 				//stop
 			  board.analogWrite(3, 0);
 			  board.digitalWrite(2, board.HIGH);
 			  board.digitalWrite(1, board.HIGH);
-			  console.log("stop");			  
+			  //console.log("stop");			  
 			}
 		});	
 	}); 
